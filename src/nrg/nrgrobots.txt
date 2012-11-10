@@ -1,0 +1,101 @@
+Troubleshooting Checklist for Dummies 
+
+Network and Connection Problems
+
+0. Make sure that you are connected(either wired or wireless) to router
+
+1. Make sure that you have set your IP to 10.9.48.___(number from 11 to 254)
+
+2. Make sure that you have set your subnet mask to 255.0.0.0
+
+3. Make sure that you have your default gateway set to 10.9.48.4  //sometimes
+
+4. ON CMD, make sure you can ping the 
+
+    a) The wireless bridge(if wireless) - 10.9.48.1
+    b) The robot(cRIO) - 10.9.48.2
+    c) The router - 10.9.48.4
+
+5. Make sure robot is on
+
+6. Make sure wireless bridge is turned on and on the right mode 
+
+Exceptions
+
+1. Make sure that you use MODULES not SLOTS for 4-slot cRIO and SLOTs for 8-slot
+(We have problems with PWM allocation if not set correctly)
+
+2. Make sure that the watchDog is being fed/motor safety
+
+3. Make sure there are no conflicts in Joysticks/code 
+
+
+Weird Strange Things with Robot
+
+1. Make sure that MAE and Gyro are offsetted or modified properly
+
+2. Make sure that there are 0 exceptions in your code
+
+3. Put Debug.printlns(obvious much)
+
+4. Correct Joysticks and channels(like baseJoystick should be 1 instead of 3 so that some ppl don't get confused when they move the manipulator joystick and the robot drives instead :P)
+
+5. Make sure the battery voltage is > 12 V, if no, switch the battery lol
+
+6. Calibrate the Joysticks :D
+
+7. Create a test simpleRobot
+
+8. Correct Gyro Sensitivity - Turn robot 5 revolutions, then do 1800 / raw gyro value. Now do 0.0073 / result. That is new gyro sensitivity 
+
+
+Making life easier for programmers:
+
+1. For most PIDs that need to be tuned constantly(i.e arm or drive), make a text file with the P, I, and D constants in 3 separate lines
+
+2. Do the same for sensor offsets(i.e MAE or Gyro)
+
+3. NEVER commit NRGDebug(or at least not the constants) more than the 1st time it's put in the project. Not a good idea
+
+Safety Backups
+
+1. Make sure that you have many different backups in your code. For example, if the IO board goes out(which it did in 2010 during competition),
+you want to move all the IO buttons/switches to the joystick buttons so that we don't have to program on the field
+
+2. Another example of above is if we have a complicated coded drive system, make a backup(i.e swerve-tank)
+
+3. 
+
+FTPing a text file to server
+
+1. Open Command Prompt           
+
+2. type in "cd" and then wherever your file is (i.e. "C:/Users/"etc)
+
+3. Now type in "ftp" and then the name of your file(make sure to include ".txt")
+
+4. Now this file should be on the cRIO :DDDDDDDD                                                                                                                                   
+
+PID troubles
+
+1. Go to browser and then type in http://10.9.48.2 (or whatever robot cRIO IP is)
+
+2.  On the very left where there's a column of images, click Remote File Browser
+
+3. On the middle column, click the file image(not the arrow)
+
+4. Now if you have files in there(ftped to the cRIO), all you have to do is double click on right side ___PID.txt
+
+5. Now you can actually edit the PID values(presumably P, then I, then D)
+
+6. Save Changes(this will save you ALOT of trouble, believe me) 
+
+Algorithmic troubles
+
+1. When taking a transcendental function(logs and trigonometic funtions), make sure that you read the documentation as to what input/ouput the method takes(e.g. Math.cos takes in radians) and convert the input/ouput accordingly
+
+2. 
+Overall
+
+Don't be stupid lolz :D
+Plz do not enable while people are working on robot

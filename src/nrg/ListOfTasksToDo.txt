@@ -1,0 +1,49 @@
+Minimum Programming Tasks On the box
+
+1. Calibrate the Arm, setpoints and PID all calibrated (button 10 on backup) //5 minutes
+
+Stow - 669
+Shoot - 700
+Bridge - 418
+Check-done :D
+
+2. Make sure manipulator motors (tower, rollers) are running in the right direction (button 11) //1 minute MINIMUM(5 min max hopefully)
+    final static int GYRO_RESET_BUTTON = 7;
+    final static int KNOB_RESET_BUTTON = 8;    
+    final static int PID_INITIALIZE_STEERING_BUTTON = 9;
+    final static int PID_INTIALIZE_MANIPULATOR_BUTTON = 7;
+    final static int MAE_CALIBRATE_BUTTON = 6;
+
+    // backup joystick buttons
+    final static int FL_UPDATE_BUTTON = 2;
+    final static int FR_UPDATE_BUTTON = 3;
+    final static int BL_UPDATE_BUTTON = 4;
+    final static int BR_UPDATE_BUTTON = 5;
+Need to do this
+
+3. Calibrate the MAES on wheels, chains on left; make sure they don't slip //5 minutes
+Did this once, not sure it was successful
+
+4. Wheels are moving in their expected directions(in both swerve and tank) //2 minute(minimum), 10 min max hopefully
+No idea
+Minimum Tasks on the Floor
+
+1. Calibrate Steering PID Values(Knob?) //15 minutes
+
+2. Start driving around, be sure to reset gyro each time we start //5 minutes
+
+3. Calibrate shoot speed //5 minutes
+
+4. Autonomous 
+
+    a. Shoot Command - 15 minutes
+    b. Twist Command - 15 minutes
+    c. Move Command - 15 minutes
+
+5. Autonomous switches - 1 hour(10 per starting position)
+
+Optional Tasks On the Floor
+
+1. Try camera servo again? Also is it a good angle? // 15 min
+
+2. Adjust PID on arm
